@@ -20,6 +20,14 @@ public class KBandit {
         this.epsilon = 0.2;
     }
 
+    public Map<AdvancedRobot, Double> getQ() {
+        return this.Q;
+    }
+
+    public Map<AdvancedRobot, Integer> getN() {
+        return this.N;
+    }
+
     private int maxIndex(Collection<Double> collection) {
         Double m = Double.NEGATIVE_INFINITY;
         int index = -1;
@@ -37,8 +45,8 @@ public class KBandit {
     public AdvancedRobot chooseBot() {
         AdvancedRobot bestBot = new ArrayList<>(this.Q.keySet()).get(maxIndex(this.Q.values()));
         List<AdvancedRobot> notCheckedBots = new ArrayList<>();
-        for (Map.Entry<AdvancedRobot, Double> entry: this.Q.entrySet()) {
-            if (entry.getValue() == 0.0) {
+        for (Map.Entry<AdvancedRobot, Integer> entry: this.N.entrySet()) {
+            if (entry.getValue() == 0) {
                 notCheckedBots.add(entry.getKey());
             }
         }
