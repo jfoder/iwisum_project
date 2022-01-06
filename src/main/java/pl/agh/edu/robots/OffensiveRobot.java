@@ -53,4 +53,9 @@ public class OffensiveRobot extends AdvancedRobot {
         moveDirection = -moveDirection;
         moveDirectionChangeTime = getTime() + 30;
     }
+
+    @Override
+    public String toString() {
+        return "OffensiveBot";
+    }
 }
