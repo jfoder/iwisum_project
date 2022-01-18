@@ -1,5 +1,6 @@
 package pl.agh.edu;
 
+import pl.agh.edu.robots.AnotherRobot;
 import pl.agh.edu.robots.DefensiveBot;
 import pl.agh.edu.robots.OffensiveRobot;
 import pl.agh.edu.robots.PassiveBot;
@@ -24,6 +25,7 @@ public class BattleRunner {
         bots.add(new OffensiveRobot());
         bots.add(new DefensiveBot());
         bots.add(new PassiveBot());
+        bots.add(new AnotherRobot());
         KBandit kBandit = new KBandit(bots);
         System.setProperty("TESTING", "true");
         RobocodeEngine.setLogMessagesEnabled(false);

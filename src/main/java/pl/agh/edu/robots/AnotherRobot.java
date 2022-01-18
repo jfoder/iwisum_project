@@ -87,4 +87,9 @@ public class AnotherRobot extends AdvancedRobot {
 
         fire(3);
     }
+
+    @Override
+    public String toString() {
+        return "AnotherRobot";
+    }
 }
